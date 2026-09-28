@@ -2,6 +2,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { MainLayout } from './layouts/MainLayout'
 import { ComingSoonPage } from './pages/ComingSoonPage'
 import { HomePage } from './pages/HomePage'
+import { LoginPage } from './pages/LoginPage'
+import { SignupPage } from './pages/SignupPage'
 
 export default function App() {
   return (
@@ -9,6 +11,7 @@ export default function App() {
       <MainLayout>
         <Routes>
           <Route path="/" element={<HomePage />} />
+
           <Route
             path="/talent"
             element={
@@ -18,6 +21,7 @@ export default function App() {
               />
             }
           />
+
           <Route
             path="/projects"
             element={
@@ -27,6 +31,7 @@ export default function App() {
               />
             }
           />
+
           <Route
             path="/projects/new"
             element={
@@ -36,6 +41,7 @@ export default function App() {
               />
             }
           />
+
           <Route
             path="/about"
             element={
@@ -45,24 +51,10 @@ export default function App() {
               />
             }
           />
-          <Route
-            path="/login"
-            element={
-              <ComingSoonPage
-                title="Log In"
-                description="Mock authentication is planned for Phase 8. No accounts are live yet."
-              />
-            }
-          />
-          <Route
-            path="/signup"
-            element={
-              <ComingSoonPage
-                title="Join Free"
-                description="Creator and professional signup is planned for Phase 8."
-              />
-            }
-          />
+
+          <Route path="/login" element={<LoginPage />} />
+
+          <Route path="/signup" element={<SignupPage />} />
         </Routes>
       </MainLayout>
     </BrowserRouter>
